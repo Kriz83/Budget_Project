@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div>
+            {% if app.request.query.get("error") is defined and app.request.query.get("error") != '' %}
+                <div class="alert alert-warning">
+                    {{ app.request.query.get("error") }}
+                </div>    
+            {% endif %}
+        </div>
+		<div>
+			<center>
+				<h1>
+					<span>Welcome to</span> Budget Planner
+				</h1>
+			</center>
+		</div>
+    </div>
+{% endblock %}
+

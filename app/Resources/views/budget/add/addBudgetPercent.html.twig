@@ -1,0 +1,259 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+        
+	<div class="container">
+		<div class="pageTitle">
+			<center>
+				<h2>Add Budget percent <a href="/showBudget">BACK</a></h2>
+				<hr>
+				<center>
+					<h2>
+						Percentage points to dispose 
+						<div style="color:green;" id="pointsToDispose">	
+						</div>
+					</h2>
+				</center>
+				<hr>
+			<center>    
+		</div>
+		<div class="row">
+			{{ form_start(form) }}
+				<div style="min-height:100px">						
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br>
+							<button type="button" class="btn btn-success" onclick="financeFreedomPercentPlus()">
+								+
+							</button>
+						</center>
+					</div>
+					<div style="float: left;">
+							{{ form_label(form.financeFreedom) }}<br/>
+							{{ form_widget(form.financeFreedom) }} 
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br>
+							<button type="button" class="btn btn-success" onclick="financeFreedomPercentMinus()">
+								-
+							</button> 
+						</center>
+					</div>						
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br>
+							<button type="button" class="btn btn-success" onclick="moneyBoxFreedomPercentPlus()">
+								+
+							</button>
+						</center>
+					</div>
+					<div style="float: left;">
+							{{ form_label(form.moneyBoxFreedom) }}<br/>
+							{{ form_widget(form.moneyBoxFreedom) }} 
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="moneyBoxFreedomPercentMinus()">
+								-
+							</button> 
+						</center>
+					</div>
+				</div>
+				<div style="min-height:100px">
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="currentExpensesTransportPlus()">
+								+
+							</button>
+						</center>
+					</div>
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.currentExpensesTransport) }}<br/>
+							{{ form_widget(form.currentExpensesTransport) }}
+						</div>
+					</div><div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="currentExpensesTransportMinus()">
+								-
+							</button> 
+						</center>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="currentExpensesFoodPlus()">
+								+
+							</button> 
+						</center>
+					</div>
+					<div style="float: left;">
+						{{ form_label(form.currentExpensesFood) }}<br/>
+						{{ form_widget(form.currentExpensesFood) }}
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="currentExpensesFoodMinus()">
+								-
+							</button> 
+						</center>
+					</div>
+				</div>
+				<div style="min-height:100px">
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="currentExpensesHomePlus()">
+								+
+							</button>
+						</center>
+					</div>
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.currentExpensesHome) }}<br/>
+							{{ form_widget(form.currentExpensesHome) }}
+						</div>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="currentExpensesHomeMinus()">
+								-
+							</button> 
+						</center>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="longTermForFutureExpensesPlus()">
+								+
+							</button> 
+						</center>
+					</div>
+					<div style="float: left;">
+						{{ form_label(form.longTermForFutureExpenses) }}<br/>
+						{{ form_widget(form.longTermForFutureExpenses) }}
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="longTermForFutureExpensesMinus()">
+								-
+							</button> 
+						</center>
+					</div>
+				</div>
+				<div style="min-height:100px">
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="pleasureAccountPlus()">
+								+
+							</button>
+						</center>
+					</div>
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.pleasureAccount) }}<br/>
+							{{ form_widget(form.pleasureAccount) }}
+						</div>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="pleasureAccountMinus()">
+								-
+							</button> 
+						</center>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="educationAccountPlus()">
+								+
+							</button>
+						</center>
+					</div>	
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.educationAccount) }}<br/>
+							{{ form_widget(form.educationAccount) }}
+						</div>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="educationAccountMinus()">
+								-
+							</button> 
+						</center>
+					</div>	
+				</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="helpOthersAccountPlus()">
+								+
+							</button>
+						</center>
+					</div>
+				<div style="min-height:100px">
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.helpOthersAccount) }}<br/>
+							{{ form_widget(form.helpOthersAccount) }}
+						</div>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="helpOthersAccountMinus()">
+								-
+							</button> 
+						</center>
+					</div>
+				</div>
+				<div style="min-height:100px">
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.month) }}<br/>
+							{{ form_widget(form.month) }}
+						</div>
+					</div>
+					<div style="float: left;min-width:60px;">
+						
+					</div>	
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.year) }}<br/>
+							{{ form_widget(form.year) }}        
+						</div>
+					</div>
+
+					<div class="col-xs-1 col-md-2">
+					<br>
+						<button type="submit" class="btn btn-primary">
+							Add Budget percent : <span class="glyphicon glyphicon-floppy-open"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div>
+				<br/><br/>
+			</div>
+			{{ form_end(form) }}                
+		</div>           
+	</div>
+		
+
+	
+<script src="{{ asset('js/addBudgetPercent.js') }}"></script>
+{% endblock %}
+
+
+

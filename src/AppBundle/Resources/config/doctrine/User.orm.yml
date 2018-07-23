@@ -1,0 +1,31 @@
+AppBundle\Entity\User:
+    type: entity
+    oneToMany:
+        budgetPercent:
+            targetEntity: BudgetPercent
+            mappedBy: user
+            joinColumn:
+                name: id
+                referencedColumnName: user_id
+        monthlyCost:
+            targetEntity: MonthlyCosts
+            mappedBy: user
+            joinColumn:
+                name: id
+                referencedColumnName: user_id 
+        monthlyAsset:
+            targetEntity: MonthlyAsset
+            mappedBy: user
+            joinColumn:
+                name: id
+                referencedColumnName: user_id 
+    table: null
+    repositoryClass: AppBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+
+    lifecycleCallbacks: {  }

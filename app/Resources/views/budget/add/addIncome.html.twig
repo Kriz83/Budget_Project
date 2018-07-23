@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+        
+        <div class="container">
+            <div class="pageTitle">
+                <center>
+                    <h2>Add Income <a href="/showBudget">BACK</a></h2>
+                <center>    
+            </div>
+            <div class="row">
+            
+                {{ form_start(form) }}
+                    <div>
+                        {{ form_label(form.name) }}<br/>
+                        {{ form_widget(form.name) }}
+                        <div style="min-height: 15px">
+                            <label style="color:red;">{{ form_errors(form.name) }}</label>
+                        </div>
+                    </div>
+                    <div>
+                        {{ form_label(form.monthIncome) }}<br/>
+                        {{ form_widget(form.monthIncome) }}
+                        <div style="min-height: 15px">
+                            <label style="color:red;">{{ form_errors(form.monthIncome) }}</label>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="min-height: 48px">
+                            {{ form_label(form.month) }}<br/>
+                            {{ form_widget(form.month) }}
+                        </div>
+                    </div>
+                    <div>
+                        <div style="min-height: 48px">
+                            {{ form_label(form.year) }}<br/>
+                            {{ form_widget(form.year) }}        
+                        </div>
+                    </div>
+                <div class="col-xs-5 col-md-8" style="min-height:120px">
+                    <div class="col-xs-4 col-md-6">
+                        
+                    </div>
+                    <div class="col-xs-1 col-md-2">
+                    <br>
+                        <button type="submit" class="btn btn-primary">
+                          <h4>Add Income : <span class="glyphicon glyphicon-floppy-open"></span></h4>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <br/><br/>
+                </div>
+                {{ form_end(form) }}                
+            </div>           
+        </div>
+
+{% endblock %}

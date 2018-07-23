@@ -1,0 +1,24 @@
+AppBundle\Entity\CostType:
+    type: entity
+    oneToMany:
+        monthlyCost:
+            targetEntity: MonthlyCosts
+            mappedBy: costType
+            joinColumn:
+                name: monthlyCost
+                referencedColumnName: costType_id
+    table: null
+    repositoryClass: AppBundle\Repository\CostTypeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        typeOfCost:
+            type: integer
+    lifecycleCallbacks: {  }

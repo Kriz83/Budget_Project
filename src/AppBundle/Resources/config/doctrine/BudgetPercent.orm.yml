@@ -1,0 +1,41 @@
+AppBundle\Entity\BudgetPercent:
+    type: entity
+    manyToOne:
+         user:
+            targetEntity: User
+            inversedBy: budgetPercent
+    joinColumn:
+        name: user_id
+        referencedColumnName: id
+    table: null
+    repositoryClass: AppBundle\Repository\BudgetPercentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        financeFreedom:
+            type: integer
+        moneyBoxFreedom:
+            type: integer
+        currentExpensesTransport:
+            type: integer
+        currentExpensesFood:
+            type: integer
+        currentExpensesHome:
+            type: integer
+        longTermForFutureExpenses:
+            type: integer
+        pleasureAccount:
+            type: integer
+        educationAccount:
+            type: integer
+        helpOthersAccount:
+            type: integer
+        month:
+            type: integer
+        year:
+            type: integer
+    lifecycleCallbacks: {  }

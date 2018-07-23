@@ -1,0 +1,27 @@
+AppBundle\Entity\MonthlyAsset:
+    type: entity
+    manyToOne:
+         user:
+            targetEntity: User
+            inversedBy: monthlyAsset
+    joinColumn:
+        name: user_id
+        referencedColumnName: id
+    table: null
+    repositoryClass: AppBundle\Repository\MonthlyAssetRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        monthIncome:
+            type: integer
+        month:
+            type: integer
+        year:
+            type: integer
+        name:
+            type: string
+    lifecycleCallbacks: {  }

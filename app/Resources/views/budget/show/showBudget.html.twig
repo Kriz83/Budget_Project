@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}        
+    <div>
+        <div>
+            {% for message in app.flashes("success") %}
+				<div class="alert alert-success">{{ message }}</div>
+			{% endfor %}
+        </div>
+        <div>
+            <center>
+                <h3>
+                    <u>Budget planner panel</u>
+                </h3>
+            </center>
+        </div>           
+        <div>
+            <center>
+                {{ form_start(form) }}  
+                    <div class="inlineDiv">
+                    {{ form_label(form.addIncome) }}
+                    {{ form_widget(form.addIncome) }}
+                    </div>
+                    <div class="inlineDiv">
+                    </div>
+                    <div class="inlineDiv">
+                        {{ form_label(form.addCost) }}
+                        {{ form_widget(form.addCost) }}
+                    </div>
+                    <div class="inlineDiv">
+                    </div>
+                    <div class="inlineDiv">
+                        {{ form_label(form.changeMonthlyPercent) }}
+                        {{ form_widget(form.changeMonthlyPercent) }}
+                    </div>  
+                {{ form_end(form) }}  
+            </center>
+        </div>        
+    </div>
+{% endblock %}
