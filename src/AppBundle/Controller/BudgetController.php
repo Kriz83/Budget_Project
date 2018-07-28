@@ -111,8 +111,29 @@ class BudgetController extends Controller
         $em = $this->getDoctrine()->getManager();
 		
 	//get user	
-		$user = $this->container->get('security.token_storage')->getToken()->getUser();
+        $user = $this->container->get('security.token_storage')->getToken()->getUser();
+        /*
+		$today = new \Datetime();
+		 
+        $month = $today->format('m');
+        $year = $today->format('Y');
 		
+		$repository = $em->getRepository('AppBundle:BudgetPercent');
+			
+        $query = $repository->createQueryBuilder('p')
+			->where('p.year = :year')
+			->setParameter('year', $year)
+			->andWhere('p.month = :month')
+			->setParameter('month', $month)
+			->andWhere('p.user = :user')
+			->setParameter('user', $user)
+			->setMaxResults(1)
+			->getQuery();
+				   
+        $currentBudgetPercent = $query->getOneOrNullResult();
+
+        return var_dump($currentBudgetPercent->getYear());
+        */
 	//get current data
 		$changeBudgetPercent = new ChangeBudgetPercent($em);
 		$currentBudgetPercent = $changeBudgetPercent->getBudgetPercentData($user);

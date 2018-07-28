@@ -13,203 +13,234 @@
             </div>
 			<div class="row">
                 {{ form_start(form) }}
-					<div style="min-height:100px">						
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br>
-								<button type="button" class="btn btn-success" onclick="financeFreedomPercentPlus()">+</button>
-							</center>
-						</div>
-						<div style="float: left;">
-							 {{ form_label(form.financeFreedom) }}<br/>
-							 {{ form_widget(form.financeFreedom) }} 
-						</div>
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br>
-								<button type="button" class="btn btn-success" onclick="financeFreedomPercentMinus()">-</button> 
-							</center>
-						</div>						
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br>
-								<button type="button" class="btn btn-success" onclick="moneyBoxFreedomPercentPlus()">+</button>
-							</center>
-						</div>
-						<div style="float: left;">
-							 {{ form_label(form.moneyBoxFreedom) }}<br/>
-							 {{ form_widget(form.moneyBoxFreedom) }} 
-						</div>
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="moneyBoxFreedomPercentMinus()">-</button> 
-							</center>
-						</div>
-					</div>
-					<div style="min-height:100px">
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="currentExpensesTransportPlus()">+</button>
-							</center>
-						</div>
-						<div style="float: left;">
-							<div style="min-height: 48px">
-								{{ form_label(form.currentExpensesTransport) }}<br/>
-								{{ form_widget(form.currentExpensesTransport) }}
-							</div>
-						</div><div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="currentExpensesTransportMinus()">-</button> 
-							</center>
-						</div>
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="currentExpensesFoodPlus()">+</button> 
-							</center>
-						</div>
-						<div style="float: left;">
-							{{ form_label(form.currentExpensesFood) }}<br/>
-							{{ form_widget(form.currentExpensesFood) }}
-						</div>
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="currentExpensesFoodMinus()">-</button> 
-							</center>
-						</div>
-					</div>
-					<div style="min-height:100px">
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="currentExpensesHomePlus()">+</button>
-							</center>
-						</div>
-						<div style="float: left;">
-							<div style="min-height: 48px">
-								{{ form_label(form.currentExpensesHome) }}<br/>
-								{{ form_widget(form.currentExpensesHome) }}
-							</div>
-						</div>
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="currentExpensesHomeMinus()">-</button> 
-							</center>
-						</div>
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="longTermForFutureExpensesPlus()">+</button> 
-							</center>
-						</div>
-						<div style="float: left;">
-							{{ form_label(form.longTermForFutureExpenses) }}<br/>
-							{{ form_widget(form.longTermForFutureExpenses) }}
-						</div>
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="longTermForFutureExpensesMinus()">-</button> 
-							</center>
-						</div>
-					</div>
-					<div style="min-height:100px">
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="pleasureAccountPlus()">+</button>
-							</center>
-						</div>
-						<div style="float: left;">
-							<div style="min-height: 48px">
-								{{ form_label(form.pleasureAccount) }}<br/>
-								{{ form_widget(form.pleasureAccount) }}
-							</div>
-						</div>
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="pleasureAccountMinus()">-</button> 
-							</center>
-						</div>
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="educationAccountPlus()">+</button>
-							</center>
-						</div>	
-						<div style="float: left;">
-							<div style="min-height: 48px">
-								{{ form_label(form.educationAccount) }}<br/>
-								{{ form_widget(form.educationAccount) }}
-							</div>
-						</div>
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="educationAccountMinus()">-</button> 
-							</center>
-						</div>	
-					</div>
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="financeFreedomPercentPlus()">+</button>
-							</center>
-						</div>
-					<div style="min-height:100px">
-						<div style="float: left;">
-							<div style="min-height: 48px">
-								{{ form_label(form.helpOthersAccount) }}<br/>
-								{{ form_widget(form.helpOthersAccount) }}
-							</div>
-						</div>
-						<div style="float: left;min-width:60px;">
-							<center>
-								<br/> 
-								<button type="button" class="btn btn-success" onclick="financeFreedomPercentMinus()">-</button> 
-							</center>
-						</div>
-					</div>
-					<div style="min-height:100px">
-						<div style="float: left;">
-							<div style="min-height: 48px">
-								{{ form_label(form.month) }}<br/>
-								{{ form_widget(form.month) }}
-							</div>
-						</div>
-						<div style="float: left;min-width:60px;">
-						  
-						</div>	
-						<div style="float: left;">
-							<div style="min-height: 48px">
-								{{ form_label(form.year) }}<br/>
-								{{ form_widget(form.year) }}        
-							</div>
-						</div>
-						<div style="float: left;">
-						</div>
-					<div class="col-xs-5 col-md-8" style="min-height:100px">
-						<div class="col-xs-4 col-md-6">
-							
-						</div>
-						<div class="col-xs-1 col-md-2">
-						<br>
-							<button type="submit" class="btn btn-primary">
-							  <h4>Change Budget percent : <span class="glyphicon glyphicon-floppy-open"></span></h4>
+				<div style="min-height:100px">						
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br>
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'financeFreedom')">
+								+
 							</button>
-						</div>
+						</center>
+					</div>
+					<div style="float: left;">
+							{{ form_label(form.financeFreedom) }}<br/>
+							{{ form_widget(form.financeFreedom) }} 
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br>
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'financeFreedom')">
+								-
+							</button> 
+						</center>
+					</div>						
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br>
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'moneyBoxFreedom')">
+								+
+							</button>
+						</center>
+					</div>
+					<div style="float: left;">
+							{{ form_label(form.moneyBoxFreedom) }}<br/>
+							{{ form_widget(form.moneyBoxFreedom) }} 
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'moneyBoxFreedom')">
+								-
+							</button> 
+						</center>
 					</div>
 				</div>
-                <div>
-                    <br/><br/>
-                </div>
-                {{ form_end(form) }}                
+				<div style="min-height:100px">
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'currentExpensesTransport')">
+								+
+							</button>
+						</center>
+					</div>
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.currentExpensesTransport) }}<br/>
+							{{ form_widget(form.currentExpensesTransport) }}
+						</div>
+					</div><div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'currentExpensesTransport')">
+								-
+							</button> 
+						</center>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'currentExpensesFood')">
+								+
+							</button> 
+						</center>
+					</div>
+					<div style="float: left;">
+						{{ form_label(form.currentExpensesFood) }}<br/>
+						{{ form_widget(form.currentExpensesFood) }}
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'currentExpensesFood')">
+								-
+							</button> 
+						</center>
+					</div>
+				</div>
+				<div style="min-height:100px">
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'currentExpensesHome')">
+								+
+							</button>
+						</center>
+					</div>
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.currentExpensesHome) }}<br/>
+							{{ form_widget(form.currentExpensesHome) }}
+						</div>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'currentExpensesHome')">
+								-
+							</button> 
+						</center>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'longTermForFutureExpenses')">
+								+
+							</button> 
+						</center>
+					</div>
+					<div style="float: left;">
+						{{ form_label(form.longTermForFutureExpenses) }}<br/>
+						{{ form_widget(form.longTermForFutureExpenses) }}
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'longTermForFutureExpenses')">
+								-
+							</button> 
+						</center>
+					</div>
+				</div>
+				<div style="min-height:100px">
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'pleasureAccount')">
+								+
+							</button>
+						</center>
+					</div>
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.pleasureAccount) }}<br/>
+							{{ form_widget(form.pleasureAccount) }}
+						</div>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'pleasureAccount')">
+								-
+							</button> 
+						</center>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'educationAccount')">
+								+
+							</button>
+						</center>
+					</div>	
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.educationAccount) }}<br/>
+							{{ form_widget(form.educationAccount) }}
+						</div>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'educationAccount')">
+								-
+							</button> 
+						</center>
+					</div>	
+				</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'helpOthersAccount')">
+								+
+							</button>
+						</center>
+					</div>
+				<div style="min-height:100px">
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.helpOthersAccount) }}<br/>
+							{{ form_widget(form.helpOthersAccount) }}
+						</div>
+					</div>
+					<div style="float: left;min-width:60px;">
+						<center>
+							<br/> 
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'helpOthersAccount')">
+								-
+							</button> 
+						</center>
+					</div>
+				</div>
+				<div style="min-height:100px">
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.month) }}<br/>
+							{{ form_widget(form.month) }}
+						</div>
+					</div>
+					<div style="float: left;min-width:60px;">
+						
+					</div>	
+					<div style="float: left;">
+						<div style="min-height: 48px">
+							{{ form_label(form.year) }}<br/>
+							{{ form_widget(form.year) }}        
+						</div>
+					</div>
+
+					<div class="col-xs-1 col-md-2">
+					<br>
+						<button type="submit" class="btn btn-primary">
+							Add Budget percent : <span class="glyphicon glyphicon-floppy-open"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div>
+				<br/><br/>
+			</div>
+			{{ form_end(form) }}           
             </div>           
         </div>
 		
