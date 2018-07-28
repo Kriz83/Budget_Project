@@ -12,10 +12,6 @@ class ChangeBudgetPercentFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-		
-        $currentDate    = new \DateTime();
-        $currentYear    = $currentDate->format('Y');
-        $currentMonth   = $currentDate->format('m');
         $months = [];
         $i = 1;
         $monthName = '';
@@ -117,8 +113,7 @@ class ChangeBudgetPercentFormType extends AbstractType
                     'label' => 'Month :',
                     'choices' => array(
                         $months,),
-                    'required' => true,  
-                    'data' => $currentMonth,                  
+                    'required' => true,                 
             ))
             ->add('year' , TextType::class, array(
                     'attr' => array(
@@ -126,7 +121,6 @@ class ChangeBudgetPercentFormType extends AbstractType
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px'),
                     'label' => 'Year :',
                     'required' => true,
-                    'data' => $currentYear,
             ));
     }
 }
