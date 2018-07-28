@@ -29,7 +29,7 @@ class AddBudgetPercentFormType extends AbstractType
         }
 		        
         $builder            
-            ->add('financeFreedom' , IntegerType::class, array(
+            ->add('xfinanceFreedom' , IntegerType::class, array(
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
@@ -38,7 +38,7 @@ class AddBudgetPercentFormType extends AbstractType
                     'required' => true,
                 
             ))
-            ->add('moneyBoxFreedom' , IntegerType::class, array(
+            ->add('xmoneyBoxFreedom' , IntegerType::class, array(
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
@@ -47,7 +47,7 @@ class AddBudgetPercentFormType extends AbstractType
                     'required' => true,
                 
             ))
-            ->add('currentExpensesTransport' , IntegerType::class, array(
+            ->add('xcurrentExpensesTransport' , IntegerType::class, array(
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
@@ -56,7 +56,7 @@ class AddBudgetPercentFormType extends AbstractType
                     'required' => true,
                 
             ))
-            ->add('currentExpensesFood' , IntegerType::class, array(
+            ->add('xcurrentExpensesFood' , IntegerType::class, array(
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
@@ -65,7 +65,7 @@ class AddBudgetPercentFormType extends AbstractType
                     'required' => true,
                 
             ))
-            ->add('currentExpensesHome' , IntegerType::class, array(
+            ->add('xcurrentExpensesHome' , IntegerType::class, array(
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
@@ -74,7 +74,7 @@ class AddBudgetPercentFormType extends AbstractType
                     'required' => true,
                 
             ))
-            ->add('longTermForFutureExpenses' , IntegerType::class, array(
+            ->add('xlongTermForFutureExpenses' , IntegerType::class, array(
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
@@ -83,7 +83,7 @@ class AddBudgetPercentFormType extends AbstractType
                     'required' => true,
                 
             ))
-            ->add('pleasureAccount' , IntegerType::class, array(
+            ->add('xpleasureAccount' , IntegerType::class, array(
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
@@ -92,7 +92,7 @@ class AddBudgetPercentFormType extends AbstractType
                     'required' => true,
                 
             ))
-            ->add('educationAccount' , IntegerType::class, array(
+            ->add('xeducationAccount' , IntegerType::class, array(
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
@@ -101,7 +101,7 @@ class AddBudgetPercentFormType extends AbstractType
                     'required' => true,
                 
             ))
-            ->add('helpOthersAccount' , IntegerType::class, array(
+            ->add('xhelpOthersAccount' , IntegerType::class, array(
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',

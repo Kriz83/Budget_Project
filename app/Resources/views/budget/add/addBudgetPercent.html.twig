@@ -23,19 +23,19 @@
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br>
-							<button type="button" class="btn btn-success" onclick="financeFreedomPercentPlus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'financeFreedom')">
 								+
 							</button>
 						</center>
 					</div>
 					<div style="float: left;">
-							{{ form_label(form.financeFreedom) }}<br/>
-							{{ form_widget(form.financeFreedom) }} 
+							{{ form_label(form.xfinanceFreedom) }}<br/>
+							{{ form_widget(form.xfinanceFreedom) }} 
 					</div>
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br>
-							<button type="button" class="btn btn-success" onclick="financeFreedomPercentMinus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'financeFreedom')">
 								-
 							</button> 
 						</center>
@@ -43,19 +43,19 @@
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br>
-							<button type="button" class="btn btn-success" onclick="moneyBoxFreedomPercentPlus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'moneyBoxFreedom')">
 								+
 							</button>
 						</center>
 					</div>
 					<div style="float: left;">
-							{{ form_label(form.moneyBoxFreedom) }}<br/>
-							{{ form_widget(form.moneyBoxFreedom) }} 
+							{{ form_label(form.xmoneyBoxFreedom) }}<br/>
+							{{ form_widget(form.xmoneyBoxFreedom) }} 
 					</div>
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="moneyBoxFreedomPercentMinus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'moneyBoxFreedom')">
 								-
 							</button> 
 						</center>
@@ -65,20 +65,20 @@
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="currentExpensesTransportPlus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'currentExpensesTransport')">
 								+
 							</button>
 						</center>
 					</div>
 					<div style="float: left;">
 						<div style="min-height: 48px">
-							{{ form_label(form.currentExpensesTransport) }}<br/>
-							{{ form_widget(form.currentExpensesTransport) }}
+							{{ form_label(form.xcurrentExpensesTransport) }}<br/>
+							{{ form_widget(form.xcurrentExpensesTransport) }}
 						</div>
 					</div><div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="currentExpensesTransportMinus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'currentExpensesTransport')">
 								-
 							</button> 
 						</center>
@@ -86,19 +86,19 @@
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="currentExpensesFoodPlus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'currentExpensesFood')">
 								+
 							</button> 
 						</center>
 					</div>
 					<div style="float: left;">
-						{{ form_label(form.currentExpensesFood) }}<br/>
-						{{ form_widget(form.currentExpensesFood) }}
+						{{ form_label(form.xcurrentExpensesFood) }}<br/>
+						{{ form_widget(form.xcurrentExpensesFood) }}
 					</div>
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="currentExpensesFoodMinus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'currentExpensesFood')">
 								-
 							</button> 
 						</center>
@@ -108,21 +108,21 @@
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="currentExpensesHomePlus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'currentExpensesHome')">
 								+
 							</button>
 						</center>
 					</div>
 					<div style="float: left;">
 						<div style="min-height: 48px">
-							{{ form_label(form.currentExpensesHome) }}<br/>
-							{{ form_widget(form.currentExpensesHome) }}
+							{{ form_label(form.xcurrentExpensesHome) }}<br/>
+							{{ form_widget(form.xcurrentExpensesHome) }}
 						</div>
 					</div>
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="currentExpensesHomeMinus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'currentExpensesHome')">
 								-
 							</button> 
 						</center>
@@ -130,19 +130,19 @@
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="longTermForFutureExpensesPlus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'longTermForFutureExpenses')">
 								+
 							</button> 
 						</center>
 					</div>
 					<div style="float: left;">
-						{{ form_label(form.longTermForFutureExpenses) }}<br/>
-						{{ form_widget(form.longTermForFutureExpenses) }}
+						{{ form_label(form.xlongTermForFutureExpenses) }}<br/>
+						{{ form_widget(form.xlongTermForFutureExpenses) }}
 					</div>
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="longTermForFutureExpensesMinus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'longTermForFutureExpenses')">
 								-
 							</button> 
 						</center>
@@ -152,21 +152,21 @@
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="pleasureAccountPlus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'pleasureAccount')">
 								+
 							</button>
 						</center>
 					</div>
 					<div style="float: left;">
 						<div style="min-height: 48px">
-							{{ form_label(form.pleasureAccount) }}<br/>
-							{{ form_widget(form.pleasureAccount) }}
+							{{ form_label(form.xpleasureAccount) }}<br/>
+							{{ form_widget(form.xpleasureAccount) }}
 						</div>
 					</div>
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="pleasureAccountMinus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'pleasureAccount')">
 								-
 							</button> 
 						</center>
@@ -174,21 +174,21 @@
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="educationAccountPlus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'educationAccount')">
 								+
 							</button>
 						</center>
 					</div>	
 					<div style="float: left;">
 						<div style="min-height: 48px">
-							{{ form_label(form.educationAccount) }}<br/>
-							{{ form_widget(form.educationAccount) }}
+							{{ form_label(form.xeducationAccount) }}<br/>
+							{{ form_widget(form.xeducationAccount) }}
 						</div>
 					</div>
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="educationAccountMinus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'educationAccount')">
 								-
 							</button> 
 						</center>
@@ -197,7 +197,7 @@
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="helpOthersAccountPlus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Plus', 'helpOthersAccount')">
 								+
 							</button>
 						</center>
@@ -205,14 +205,14 @@
 				<div style="min-height:100px">
 					<div style="float: left;">
 						<div style="min-height: 48px">
-							{{ form_label(form.helpOthersAccount) }}<br/>
-							{{ form_widget(form.helpOthersAccount) }}
+							{{ form_label(form.xhelpOthersAccount) }}<br/>
+							{{ form_widget(form.xhelpOthersAccount) }}
 						</div>
 					</div>
 					<div style="float: left;min-width:60px;">
 						<center>
 							<br/> 
-							<button type="button" class="btn btn-success" onclick="helpOthersAccountMinus()">
+							<button type="button" class="btn btn-success" onclick="changeValue('Minus', 'helpOthersAccount')">
 								-
 							</button> 
 						</center>

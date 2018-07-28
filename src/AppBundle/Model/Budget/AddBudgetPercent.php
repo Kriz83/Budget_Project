@@ -22,15 +22,15 @@ class AddBudgetPercent
     public function addBudgetPercent($form, $user)
     {
 		
-        $financeFreedom = $form['financeFreedom']->getData();
-        $moneyBoxFreedom = $form['moneyBoxFreedom']->getData();
-        $currentExpensesTransport = $form['currentExpensesTransport']->getData();
-        $currentExpensesFood = $form['currentExpensesFood']->getData();
-        $currentExpensesHome = $form['currentExpensesHome']->getData();
-        $longTermForFutureExpenses = $form['longTermForFutureExpenses']->getData();
-        $pleasureAccount = $form['pleasureAccount']->getData();
-        $educationAccount = $form['educationAccount']->getData();
-        $helpOthersAccount = $form['helpOthersAccount']->getData();
+        $financeFreedom = $form['xfinanceFreedom']->getData();
+        $moneyBoxFreedom = $form['xmoneyBoxFreedom']->getData();
+        $currentExpensesTransport = $form['xcurrentExpensesTransport']->getData();
+        $currentExpensesFood = $form['xcurrentExpensesFood']->getData();
+        $currentExpensesHome = $form['xcurrentExpensesHome']->getData();
+        $longTermForFutureExpenses = $form['xlongTermForFutureExpenses']->getData();
+        $pleasureAccount = $form['xpleasureAccount']->getData();
+        $educationAccount = $form['xeducationAccount']->getData();
+        $helpOthersAccount = $form['xhelpOthersAccount']->getData();
         $month = $form['month']->getData();
         $year = $form['year']->getData();
 		
