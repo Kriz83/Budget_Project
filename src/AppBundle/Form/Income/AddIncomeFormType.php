@@ -10,10 +10,10 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 class AddIncomeFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
-    {
+    {        
         $currentDate    = new \DateTime();
-        $currentYear    = $currentDate->format('Y');
-        $currentMonth   = $currentDate->format('m');
+        $currentYear    = intval($currentDate->format('Y'));
+        $currentMonth   = intval($currentDate->format('m'));
         $months = [];
         $i = 1;
         $monthName = '';
