@@ -23,27 +23,16 @@ class BudgetPercentCheck
     {
 		$today = new \Datetime();
 		 
-        $month = $today->format('m');
-        $year = $today->format('Y');
-         
-	//check if budget percent is set
-		$repository = $this->em->getRepository('AppBundle:BudgetPercent');
-			
-		$query = $repository->createQueryBuilder('p')
-			->where('p.year = :year')
-			->setParameter('year', $year)
-			->andWhere('p.month = :month')
-			->setParameter('month', $month)
-			->andWhere('p.user = :user')
-			->setParameter('user', $user)
-			->getQuery();
-				   
-		$budgetPercent = $query->getResult();
+        $month = intval($today->format('m'));
+        $year = intval($today->format('Y'));
+        
+		//check if budget percent is set		
+		$budgetPercent = $this->em->
+			getRepository('AppBundle:BudgetPercent')
+			->findByUserYearMonth($user);
 		
-		if ($budgetPercent == null) {
-			
-			return 1;
-			
+		if ($budgetPercent != null) {			
+			return 1;			
 		}      
         
     }

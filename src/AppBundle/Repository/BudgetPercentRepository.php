@@ -9,5 +9,44 @@ namespace AppBundle\Repository;
  * repository methods below.
  */
 class BudgetPercentRepository extends \Doctrine\ORM\EntityRepository
-{
+{ 
+    public function findOneByUserYearMonth($user) 
+    {        
+        $today = new \Datetime();
+		 
+        $month = intval($today->format('m'));
+        $year = intval($today->format('Y'));
+
+        $query = $this->createQueryBuilder('p')
+            ->where('p.year = :year')
+            ->setParameter('year', $year)
+            ->andWhere('p.month = :month')
+            ->setParameter('month', $month)
+            ->andWhere('p.user = :user')
+            ->setParameter('user', $user)
+            ->setMaxResults(1)
+            ->getQuery();
+
+        return $query->getOneOrNullResult();
+    }
+
+    public function findByUserYearMonth($user) 
+    {        
+        $today = new \Datetime();
+		 
+        $month = intval($today->format('m'));
+        $year = intval($today->format('Y'));
+
+        $query = $this->createQueryBuilder('p')
+            ->select('p.id as id')
+            ->where('p.year = :year')
+            ->setParameter('year', $year)
+            ->andWhere('p.month = :month')
+            ->setParameter('month', $month)
+            ->andWhere('p.user = :user')
+            ->setParameter('user', $user)
+            ->getQuery();
+
+        return $query->getResult();
+    }
 }

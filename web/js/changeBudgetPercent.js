@@ -1,7 +1,6 @@
 let pointsToDispose = 100;
 let formId = `input[name*='_form']`;
 let idStart; 
-let formNames;
 let valueOfField;
 let valueFromDB;
 

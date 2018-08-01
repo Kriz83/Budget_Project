@@ -25,22 +25,12 @@ class ChangeBudgetPercent
 		     
         $today = new \Datetime();
 		 
-        $month = $today->format('m');
-        $year = $today->format('Y');
-		
-		$repository = $this->em->getRepository('AppBundle:BudgetPercent');
-			
-		$query = $repository->createQueryBuilder('p')
-			->where('p.year = :year')
-			->setParameter('year', $year)
-			->andWhere('p.month = :month')
-			->setParameter('month', $month)
-			->andWhere('p.user = :user')
-			->setParameter('user', $user)
-			->setMaxResults(1)
-			->getQuery();
-				   
-		$currentBudgetPercent = $query->getOneOrNullResult();
+        $month = intval($today->format('m'));
+        $year = intval($today->format('Y'));
+        	
+        $currentBudgetPercent = $this->em->
+            getRepository('AppBundle:BudgetPercent')
+            ->findOneByUserYearMonth($user);
 		
 		return $currentBudgetPercent;
 		
@@ -49,9 +39,36 @@ class ChangeBudgetPercent
     /**
      * {@inheritdoc}
      */    
-    public function changeBudgetPercent($form, $user)
+    public function changeBudgetPercent($form, $budgetPercent)
     {
-		     
+		  		
+        $financeFreedom = $form['financeFreedom']->getData();
+        $moneyBoxFreedom = $form['moneyBoxFreedom']->getData();
+        $currentExpensesTransport = $form['currentExpensesTransport']->getData();
+        $currentExpensesFood = $form['currentExpensesFood']->getData();
+        $currentExpensesHome = $form['currentExpensesHome']->getData();
+        $longTermForFutureExpenses = $form['longTermForFutureExpenses']->getData();
+        $pleasureAccount = $form['pleasureAccount']->getData();
+        $educationAccount = $form['educationAccount']->getData();
+        $helpOthersAccount = $form['helpOthersAccount']->getData();
+		
+        //add new BudgetPercent 
+		
+        $budgetPercent->setFinanceFreedom($financeFreedom);
+        $budgetPercent->setMoneyBoxFreedom($moneyBoxFreedom);
+        $budgetPercent->setCurrentExpensesTransport($currentExpensesTransport);
+        $budgetPercent->setCurrentExpensesFood($currentExpensesFood);
+        $budgetPercent->setCurrentExpensesHome($currentExpensesHome);
+        $budgetPercent->setLongTermForFutureExpenses($longTermForFutureExpenses);
+        $budgetPercent->setPleasureAccount($pleasureAccount);
+		$budgetPercent->setEducationAccount($educationAccount);
+		$budgetPercent->setHelpOthersAccount($helpOthersAccount);
+		
+		
+        $this->em->persist($budgetPercent);
+        
+        $this->em->flush();   
+        return 1;     
         
     }
     

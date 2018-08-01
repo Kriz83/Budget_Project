@@ -14,8 +14,8 @@ class AddBudgetPercentFormType extends AbstractType
     {
 		
         $currentDate    = new \DateTime();
-        $currentYear    = $currentDate->format('Y');
-        $currentMonth   = $currentDate->format('m');
+        $currentYear    = intval($currentDate->format('Y'));
+        $currentMonth   = intval($currentDate->format('m'));
         $months = [];
         $i = 1;
         $monthName = '';
@@ -113,7 +113,8 @@ class AddBudgetPercentFormType extends AbstractType
             ->add('month' , ChoiceType::class, array(
                     'attr' => array(
                         'class' => 'form-control' ,
-                        'style' => 'color:black; font-size:14px; margin-bottom:10px; text-transform: uppercase; border: 1px solid gold; width:250px; height:40px'),
+                        'style' => 'color:black; font-size:14px; margin-bottom:10px; text-transform: uppercase; border: 1px solid gold; width:250px; height:40px',
+						'readonly' => true,),
                     'label' => 'Month :',
                     'choices' => array(
                         $months,),
@@ -123,7 +124,8 @@ class AddBudgetPercentFormType extends AbstractType
             ->add('year' , TextType::class, array(
                     'attr' => array(
                         'class' => 'form-control' ,
-						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px'),
+                        'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',	
+                        'readonly' => true,),
                     'label' => 'Year :',
                     'required' => true,
                     'data' => $currentYear,

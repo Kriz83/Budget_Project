@@ -29,7 +29,7 @@ class ChangeBudgetPercentFormType extends AbstractType
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
-						'disabled' => 'disabled',),
+						'readonly' => true,),
                     'label' => 'Finance freedom account :',
                     'required' => true,
                 
@@ -38,7 +38,7 @@ class ChangeBudgetPercentFormType extends AbstractType
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
-						'disabled' => 'disabled',),
+						'readonly' => true,),
                     'label' => 'Freedom money box :',
                     'required' => true,
                 
@@ -47,7 +47,7 @@ class ChangeBudgetPercentFormType extends AbstractType
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
-						'disabled' => 'disabled',),
+						'readonly' => true,),
                     'label' => 'Current expenses transport :',
                     'required' => true,
                 
@@ -56,7 +56,7 @@ class ChangeBudgetPercentFormType extends AbstractType
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
-						'disabled' => 'disabled',),
+						'readonly' => true,),
                     'label' => 'Current expenses food :',
                     'required' => true,
                 
@@ -65,7 +65,7 @@ class ChangeBudgetPercentFormType extends AbstractType
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
-						'disabled' => 'disabled',),
+						'readonly' => true,),
                     'label' => 'Current expenses home :',
                     'required' => true,
                 
@@ -74,7 +74,7 @@ class ChangeBudgetPercentFormType extends AbstractType
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
-						'disabled' => 'disabled',),
+						'readonly' => true,),
                     'label' => 'Long term future expenses :',
                     'required' => true,
                 
@@ -83,7 +83,7 @@ class ChangeBudgetPercentFormType extends AbstractType
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
-						'disabled' => 'disabled',),
+						'readonly' => true,),
                     'label' => 'Pleasure account :',
                     'required' => true,
                 
@@ -92,8 +92,8 @@ class ChangeBudgetPercentFormType extends AbstractType
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
-						'disabled' => 'disabled',),
-                    'label' => 'Cost name :',
+						'readonly' => true,),
+                    'label' => 'Education Account :',
                     'required' => true,
                 
             ))
@@ -101,7 +101,7 @@ class ChangeBudgetPercentFormType extends AbstractType
                     'attr' => array(
                         'class' => 'form-control' ,
 						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
-						'disabled' => 'disabled',),
+						'readonly' => true,),
                     'label' => 'Education account :',
                     'required' => true,
                 
@@ -109,7 +109,8 @@ class ChangeBudgetPercentFormType extends AbstractType
             ->add('month' , ChoiceType::class, array(
                     'attr' => array(
                         'class' => 'form-control' ,
-                        'style' => 'color:black; font-size:14px; margin-bottom:10px; text-transform: uppercase; border: 1px solid gold; width:250px; height:40px'),
+                        'style' => 'color:black; font-size:14px; margin-bottom:10px; text-transform: uppercase; border: 1px solid gold; width:250px; height:40px',
+                        'readonly' => true,),
                     'label' => 'Month :',
                     'choices' => array(
                         $months,),
@@ -118,7 +119,8 @@ class ChangeBudgetPercentFormType extends AbstractType
             ->add('year' , TextType::class, array(
                     'attr' => array(
                         'class' => 'form-control' ,
-						'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px'),
+                        'style' => 'color:black; font-size:12px; text-transform: uppercase; margin-bottom:10px; border: 1px solid gold; width:250px; height:40px',
+                        'readonly' => true,),
                     'label' => 'Year :',
                     'required' => true,
             ));

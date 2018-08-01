@@ -26,8 +26,8 @@ class NavigateController extends Controller
 			$budgetPercentCheck = new BudgetPercentCheck($em);
 			
 			$checkIsAdded = $budgetPercentCheck->checkIsBudgetPercentIsSet($user);
-			
-			if ($checkIsAdded === 1) {
+			//if budget for current month is not passed to db yet
+			if ($checkIsAdded !== 1) {
 				
 				return $this->redirectToRoute('addBudgetPercent', array(
                 ));

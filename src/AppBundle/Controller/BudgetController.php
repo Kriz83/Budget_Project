@@ -111,33 +111,12 @@ class BudgetController extends Controller
         $em = $this->getDoctrine()->getManager();
 		
 	//get user	
-        $user = $this->container->get('security.token_storage')->getToken()->getUser();
-        /*
-		$today = new \Datetime();
-		 
-        $month = $today->format('m');
-        $year = $today->format('Y');
-		
-		$repository = $em->getRepository('AppBundle:BudgetPercent');
-			
-        $query = $repository->createQueryBuilder('p')
-			->where('p.year = :year')
-			->setParameter('year', $year)
-			->andWhere('p.month = :month')
-			->setParameter('month', $month)
-			->andWhere('p.user = :user')
-			->setParameter('user', $user)
-			->setMaxResults(1)
-			->getQuery();
-				   
-        $currentBudgetPercent = $query->getOneOrNullResult();
-
-        return var_dump($currentBudgetPercent->getYear());
-        */
+        $user = $this->container->get('security.token_storage')->getToken()->getUser()->getId();
+       
 	//get current data
 		$changeBudgetPercent = new ChangeBudgetPercent($em);
-		$currentBudgetPercent = $changeBudgetPercent->getBudgetPercentData($user);
-		
+        $currentBudgetPercent = $changeBudgetPercent->getBudgetPercentData($user);
+        
 	//set form
         $form = $this->createForm(ChangeBudgetPercentFormType::class, $currentBudgetPercent);      
         
@@ -146,8 +125,8 @@ class BudgetController extends Controller
         
     //add data to db when form is submitted
         if ($form->isSubmitted() && $form->isValid()) {
-            
-			$changeBudgetPercent = $budgetPercent->changeBudgetPercent($form, $user);
+                   
+			$changeBudgetPercent = $changeBudgetPercent->changeBudgetPercent($form, $currentBudgetPercent);
 			
 			$this->addFlash("success", 'Success - new budget Goal was saved!');
 			
