@@ -23,18 +23,18 @@ class IncomeController extends Controller
     */
     public function addIncomeAction(Request $request)
     {
-    //get doctrine manager
+        //get doctrine manager
         $em = $this->getDoctrine()->getManager();
 	//get user	
 		$user = $this->container->get('security.token_storage')->getToken()->getUser();
 
-    //create form
+        //create form
         $form = $this->createForm(AddIncomeFormType::class);        
         
-    //handle request
+        //handle request
         $form->handleRequest($request);
         
-    //add data to db when form is submitted
+        //add data to db when form is submitted
         if ($form->isSubmitted() && $form->isValid()) {
             
             $addIncome = new Income($em);
@@ -43,16 +43,13 @@ class IncomeController extends Controller
             
             $addNewAsset = $addIncome->addIncome($income, $form, $user);
             
-            if ($addNewAsset === 1) {
-                
+            if ($addNewAsset === 1) {               
                 $success = 'Success - new income was saved!';
                 
                 return $this->redirectToRoute('showBudget', array(
                     'success'    => $success,
-                ));
-                
-            }
-            
+                ));                
+            }            
         }
     
         return $this->render('budget\add\addIncome.html.twig', array(

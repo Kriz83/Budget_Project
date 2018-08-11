@@ -49,8 +49,7 @@ class AddBudgetPercent
 		$budgetPercent->setEducationAccount($educationAccount);
 		$budgetPercent->setHelpOthersAccount($helpOthersAccount);
 		$budgetPercent->setMonth($month);
-		$budgetPercent->setYear($year);
-		
+		$budgetPercent->setYear($year);		
 		
         $this->em->persist($budgetPercent);
         

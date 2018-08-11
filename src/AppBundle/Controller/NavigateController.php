@@ -15,25 +15,22 @@ class NavigateController extends Controller
     */
     public function indexAction(Request $request)
     {
-    //get doctrine manager
+        //get doctrine manager
         $em = $this->getDoctrine()->getManager();
-	//get user	
+	    //get user	
 		$user = $this->container->get('security.token_storage')->getToken()->getUser();
 
-	//if user is logged - check if percent for current month is set
+	    //if user is logged - check if percent for current month is set
 		if ($user !== 'anon.') {
 
 			$budgetPercentCheck = new BudgetPercentCheck($em);
 			
 			$checkIsAdded = $budgetPercentCheck->checkIsBudgetPercentIsSet($user);
 			//if budget for current month is not passed to db yet
-			if ($checkIsAdded !== 1) {
-				
+			if ($checkIsAdded !== 1) {				
 				return $this->redirectToRoute('addBudgetPercent', array(
-                ));
-				
+                ));				
 			}
-
 		}		
 		
         return $this->render('budget/index.html.twig', [

@@ -32,7 +32,9 @@ class AppFixtures extends Fixture
 			'Education account' => 1,
 			'Help others account' => 1,
 			'Life current - food' => 0,
-			'Life current - others' => 0
+			'Life current - others' => 0,
+			'Life current - pleasure' => 0,
+			'Life current - transport' => 0
 		];
 		
         foreach ($costTypes as $costType => $typeOfCost) {

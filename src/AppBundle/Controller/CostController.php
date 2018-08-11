@@ -23,41 +23,37 @@ class CostController extends Controller
     */
     public function addCostAction(Request $request)
     {
-    //get doctrine manager
+        //get doctrine manager
         $em = $this->getDoctrine()->getManager();
 		
-	//get user	
+        //get user	
 		$user = $this->container->get('security.token_storage')->getToken()->getUser();
-	//get cost types
+        //get cost types
 		$addCost = new Cost($em);
 		
 		$costTypesArray = $addCost->getCostTypes();
 	
-    //create form
+        //create form
 		$data = [];
 		$data['costTypesArray'] = $costTypesArray;
 	
         $form = $this->createForm(AddCostFormType::class, $data);      
         
-    //handle request
+        //handle request
         $form->handleRequest($request);
         
-    //add data to db when form is submitted
+        //add data to db when form is submitted
         if ($form->isSubmitted() && $form->isValid()) {
             
-		//create new cost object
+		    //create new cost object
             $cost = new MonthlyCosts;
-		//add cost to db		
+		    //add cost to db		
             $addNewCost = $addCost->addCost($cost, $form, $user);
 			            
-            if ($addNewCost === 1) {
-                
+            if ($addNewCost === 1) {                
                 $this->addFlash("success", 'Success - new cost was saved!');
-                
-                return $this->redirectToRoute('showBudget');
-                
-            }
-            
+                return $this->redirectToRoute('showBudget');                
+            }            
         }
     
         return $this->render('budget\add\addCost.html.twig', array(

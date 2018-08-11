@@ -25,37 +25,29 @@ class BudgetController extends Controller
     *
     */
     public function showBudgetAction(Request $request)
-    {   
-    
-    //get form of buttons
+    {       
+        //get form of buttons
         $form = $this->createForm(PanelFormType::class);
         
-    //handle request
+        //handle request
         $form->handleRequest($request);
-    //redirect depend on clicked button
+        //redirect depend on clicked button
         if ($form->isSubmitted() && $form->isValid()) {
     
-            if ($form->get('addIncome')->isClicked()) {    
-            
+            if ($form->get('addIncome')->isClicked()) {                
                 return $this->redirectToRoute('addIncome', array(
-                ));
-            
+                ));            
             }
                     
-            if ($form->get('changeMonthlyPercent')->isClicked()) {    
-            
+            if ($form->get('changeMonthlyPercent')->isClicked()) {                
                 return $this->redirectToRoute('changeMonthlyPercent', array(
-                ));
-            
+                ));            
             }    
             
-            if ($form->get('addCost')->isClicked()) {    
-            
+            if ($form->get('addCost')->isClicked()) { 
                 return $this->redirectToRoute('addCost', array(
-                ));
-            
-            } 
-            
+                ));            
+            }             
         }
     
         return $this->render('budget\show\showBudget.html.twig', array(
@@ -71,18 +63,18 @@ class BudgetController extends Controller
     */
     public function addBudgetPercentAction(Request $request)
     {
-    //get doctrine manager
+        //get doctrine manager
         $em = $this->getDoctrine()->getManager();
 		
-	//get user	
+        //get user	
 		$user = $this->container->get('security.token_storage')->getToken()->getUser();
 		
         $form = $this->createForm(AddBudgetPercentFormType::class);      
         
-    //handle request
+        //handle request
         $form->handleRequest($request);
         
-    //add data to db when form is submitted
+        //add data to db when form is submitted
         if ($form->isSubmitted() && $form->isValid()) {
          
 			$budgetPercent = new AddBudgetPercent($em);
@@ -107,31 +99,29 @@ class BudgetController extends Controller
     */
     public function changeMonthlyPercentAction(Request $request)
     {
-    //get doctrine manager
+        //get doctrine manager
         $em = $this->getDoctrine()->getManager();
 		
-	//get user	
+        //get user	
         $user = $this->container->get('security.token_storage')->getToken()->getUser()->getId();
        
-	//get current data
+        //get current data
 		$changeBudgetPercent = new ChangeBudgetPercent($em);
         $currentBudgetPercent = $changeBudgetPercent->getBudgetPercentData($user);
         
-	//set form
+        //set form
         $form = $this->createForm(ChangeBudgetPercentFormType::class, $currentBudgetPercent);      
         
-    //handle request
+        //handle request
         $form->handleRequest($request);
         
-    //add data to db when form is submitted
-        if ($form->isSubmitted() && $form->isValid()) {
-                   
+        //add data to db when form is submitted
+        if ($form->isSubmitted() && $form->isValid()) {                   
 			$changeBudgetPercent = $changeBudgetPercent->changeBudgetPercent($form, $currentBudgetPercent);
 			
 			$this->addFlash("success", 'Success - new budget Goal was saved!');
 			
-			return $this->redirectToRoute('showBudget');
-            
+			return $this->redirectToRoute('showBudget');            
         }
     
         return $this->render('budget\edit\changeBudgetPercent.html.twig', array(
