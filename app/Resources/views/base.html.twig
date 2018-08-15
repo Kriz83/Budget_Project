@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome to Save Budget!{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/grid.css') }}">
             <link rel="stylesheet" href="{{ asset('css/budget.css') }}">
         {% endblock %}		
         {% block javascripts %}
@@ -12,72 +12,82 @@
 		{% endblock %}
     </head>
     <body>
-        <div class="container">
-            <br/>
-            <div class="row">
-                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                  <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="/" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-                  {% if is_granted('ROLE_USER') %}
-				      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-                      <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="/showBudget" role="tab" aria-controls="v-pills-budget" aria-selected="false">Budget</a>
-                      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="{{ path('fos_user_security_logout') }}" role="tab" aria-controls="v-pills-logout" aria-selected="false">LOGOUT</a>
-                  {% else %}
-                      <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="{{ path('fos_user_security_login') }}" role="tab" aria-controls="v-pills-login" aria-selected="false">LOGIN</a>
-                  {% endif %}
-                </div>
-                <div class="verticalLine" style="min-height: 400px;">
-                </div>
-                <div style="width:90%;">
-					{% if is_granted('ROLE_USER') %}
-						{% set month = "now"|date("m") %}
-						{% set year = "now"|date("Y") %}
-						
-					{# get income of current month #}
-					
-						{% set currentIncome = app.user.monthlyAsset %}
-						{% set incomeValue = 0 %}
-						{% for income in currentIncome %}
-							{% if income.year == year and income.month == month %}
-						       {% set incomeValue = incomeValue + income.getMonthIncome %}
-							{% endif %}
-						{% endfor %}
-					{# #}
-
-					{# get current money and saved value #}
-					
-						{% set currentCosts = app.user.monthlyCost %}
-						{% set currentMoney = 0 %}
-						{% set savedMoney = 0 %}
-						{% for costs in currentCosts %}
-							{% if costs.year == year and costs.month == month %}
-								{% set currentMoney = currentMoney + costs.getCostValue %}
-								{% if costs.getCostType.getTypeOfCost == 1 or costs.getCostType.getTypeOfCost == 2 %}
-									{% set savedMoney = savedMoney + costs.getCostValue %}
-								{% endif %}
-							{% endif %}	
-						{% endfor %}
-						{% set currentMoney = incomeValue - currentMoney %}
-						
-					{# #}	
-						<div class="currentToolbar">         
-							<h4>
-								<center>
-								    INCOME: <span style="color:lightgreen;">{{incomeValue}} <b>$</b></span> 
-									CURRENT MONEY: <span style="color:lightgreen;">{{currentMoney}} <b>$</b></span>
-									SAVED: <span style="color:lightgreen;">{{savedMoney}} <b>$</b></span>
-								</center>
-							</h4>
+        <div class="wrapper">
+            <div class="nested">
+				<a class="menu-a" href="/">
+					<div class="menu-selector">
+						Home
+					</div>
+				</a>
+                {% if is_granted('ROLE_USER') %}
+					<a class="menu-a" href="#">
+						<div class="menu-selector">
+							Profile
 						</div>
-						
-						{% block body %}{% endblock %}
-                    {% else %}
-						LOGIN FIRST TO MANAGE YOUR BUDGET
-					{% endif %}
-                </div>
-            </div>
+					</a>
+					<a class="menu-a" href="/showBudget">
+						<div class="menu-selector">
+							Budget
+						</div>
+					</a>
+					<a class="menu-a" href="{{ path('fos_user_security_logout') }}">
+						<div class="menu-selector">
+							LOGOUT
+						</div>
+					</a>
+                {% else %}
+					<a class="menu-a" href="{{ path('fos_user_security_login') }}">
+						<div class="menu-selector">
+							LOGIN
+						</div>
+					</a>
+                {% endif %}
+			</div>
+            <div class="nested">
+				{% if is_granted('ROLE_USER') %}
+					{% set month = "now"|date("m") %}
+					{% set year = "now"|date("Y") %}
+					
+				{# get income of current month #}
+				
+					{% set currentIncome = app.user.monthlyAsset %}
+					{% set incomeValue = 0 %}
+					{% for income in currentIncome %}
+						{% if income.year == year and income.month == month %}
+							{% set incomeValue = incomeValue + income.getMonthIncome %}
+						{% endif %}
+					{% endfor %}
+				{# #}
 
+				{# get current money and saved value #}
+				
+					{% set currentCosts = app.user.monthlyCost %}
+					{% set currentMoney = 0 %}
+					{% set savedMoney = 0 %}
+					{% for costs in currentCosts %}
+						{% if costs.year == year and costs.month == month %}
+							{% set currentMoney = currentMoney + costs.getCostValue %}
+							{% if costs.getCostType.getTypeOfCost == 1 or costs.getCostType.getTypeOfCost == 2 %}
+								{% set savedMoney = savedMoney + costs.getCostValue %}
+							{% endif %}
+						{% endif %}	
+					{% endfor %}
+					{% set currentMoney = incomeValue - currentMoney %}
+					
+				{# #}	
+					<div class="currentToolbar">
+						INCOME: <span style="color:lightgreen;">{{incomeValue}} <b>$</b></span> 
+						CURRENT MONEY: <span style="color:lightgreen;">{{currentMoney}} <b>$</b></span>
+						SAVED: <span style="color:lightgreen;">{{savedMoney}} <b>$</b></span>
+					</div>
+					
+					{% block body %}{% endblock %}
+				{% else %}
+					LOGIN FIRST TO MANAGE YOUR BUDGET
+				{% endif %}
+            </div>
                         
         </div>
-                
+			
     </body>
 </html>

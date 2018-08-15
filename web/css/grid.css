@@ -1,0 +1,22 @@
+.wrapper {
+    padding: 54px;
+    padding-top: 9px;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+    grid-gap:1em;    
+    grid-auto-rows: minmax(33px, auto);
+}
+
+.nested > div{
+    display: block;
+    padding:1em;
+}
+
+.wrapper-col {
+    display: grid;
+}
+
+.nested-col > div{
+    display: block;
+    padding:1em;
+}
