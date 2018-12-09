@@ -35,7 +35,6 @@ class AddBudgetPercent
         $year = $form['year']->getData();
 		
         //add new BudgetPercent 
-
 		$budgetPercent = new BudgetPercent;
 		
         $budgetPercent->setUser($user);
